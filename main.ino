@@ -54,12 +54,17 @@ void double_buzz(Servo svo1, Servo svo2)
 
 void help()
 {
+    Serial.println("**************************");
     Serial.println("Welcome to Blind Assassin!");
+    Serial.println("**************************");
+    Serial.println("");
     Serial.println("Handler: Move your teammate using the keyboard.");
     Serial.println("Left - 'a' Forward - 'w' Right - 'd'");
+    Serial.println("");
     Serial.println("Assassin: Move left when left motor buzzes.");
-    Serial.println("Assassin: Move right when right motor buzzes.");
-    Serial.println("Assassin: Move forward when both motors buzz.");
+    Serial.println("Move right when right motor buzzes.");
+    Serial.println("Move forward when both motors buzz.");
+    Serial.println("");
 }
 
 void loop() 
@@ -71,17 +76,17 @@ void loop()
                 // else if statements did not work here for reasons for which there was no time to debug
                 if (incomingByte == FORWARD)
                 {
-                    Serial.print("Now moving forward");
+                    Serial.println("Now moving forward");
                     double_buzz(rservo, lservo);
                 }
                 if (incomingByte == LEFT)
                 {
-                    Serial.print("Now moving left");
+                    Serial.println("Now moving left");
                     buzz(lservo);
                 } 
                 if (incomingByte == RIGHT)
                 {
-                    Serial.print("Now moving right");
+                    Serial.println("Now moving right");
                     buzz(rservo);
                 } 
                 if (incomingByte == HELP)
