@@ -71,23 +71,22 @@ void loop()
                 // else if statements did not work here for reasons for which there was no time to debug
                 if (incomingByte == FORWARD)
                 {
+                    Serial.print("Now moving forward");
                     double_buzz(rservo, lservo);
                 }
                 if (incomingByte == LEFT)
                 {
+                    Serial.print("Now moving left");
                     buzz(lservo);
                 } 
                 if (incomingByte == RIGHT)
                 {
+                    Serial.print("Now moving right");
                     buzz(rservo);
                 } 
                 if (incomingByte == HELP)
                 {
                     help();
                 }
-
-                // say what you got:
-                Serial.print("I received: ");
-                Serial.println(incomingByte, DEC);
         }
 }
